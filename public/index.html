@@ -133,7 +133,14 @@
       }
       .social-icon:hover::before { width: 120%; height: 120%; }
       .social-icon img { position: relative; z-index: 2; }
-    </style>
+
+      /* Mobile: center service cards */
+      @media (max-width: 639px) {
+        #servicios .grid > a { text-align: center; }
+        #servicios .grid > a img { margin-left: auto; margin-right: auto; }
+        #servicios .grid > a p { margin-left: auto; margin-right: auto; }
+        #servicios .grid > a span.mt-6 { justify-content: center; }
+      }    </style>
   </head>
 
   <body class="bg-white text-ink overflow-x-hidden">
