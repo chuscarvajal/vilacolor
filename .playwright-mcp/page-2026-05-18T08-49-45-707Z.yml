@@ -1,0 +1,444 @@
+- generic "Google Maps" [ref=e9]:
+  - generic [ref=e3]:
+    - application "Mapa·Usa las teclas de flecha para desplazarte por el mapa.·Obtén información sobre un sitio pulsando la tecla numérica correspondiente." [ref=e10]
+    - search [ref=e15]:
+      - button "Atrás" [ref=e715] [cursor=pointer]:
+        - generic [ref=e18]: 
+      - generic [ref=e19]:
+        - combobox [ref=e21]: Pintor Romero
+        - button "Búsqueda" [ref=e23] [cursor=pointer]:
+          - generic [ref=e24]: 
+        - button "Cerrar" [ref=e26] [cursor=pointer]:
+          - generic [ref=e27]: 
+    - region "Opciones de búsqueda disponibles en esta zona" [ref=e34]:
+      - generic [ref=e37]:
+        - button "Restaurantes" [ref=e39] [cursor=pointer]:
+          - generic [ref=e40]:
+            - generic [ref=e42]: 
+            - generic [ref=e43]: Restaurantes
+        - button "Hoteles" [ref=e45] [cursor=pointer]:
+          - generic [ref=e46]:
+            - generic [ref=e48]: 
+            - generic [ref=e49]: Hoteles
+        - button "Qué hacer" [ref=e51] [cursor=pointer]:
+          - generic [ref=e52]:
+            - generic [ref=e54]: 
+            - generic [ref=e55]: Qué hacer
+        - button "Transporte público" [ref=e57] [cursor=pointer]:
+          - generic [ref=e58]:
+            - generic [ref=e60]: 
+            - generic [ref=e61]: Transporte público
+        - button "Aparcamientos" [ref=e63] [cursor=pointer]:
+          - generic [ref=e64]:
+            - generic [ref=e66]: 
+            - generic [ref=e67]: Aparcamientos
+        - button "Farmacias" [ref=e69] [cursor=pointer]:
+          - generic [ref=e70]:
+            - generic [ref=e72]: 
+            - generic [ref=e73]: Farmacias
+        - button "Cajeros automáticos" [ref=e75] [cursor=pointer]:
+          - generic [ref=e76]:
+            - generic [ref=e78]: 
+            - generic [ref=e79]: Cajeros automáticos
+      - button "Página siguiente" [ref=e80] [cursor=pointer]:
+        - generic [ref=e81]: 
+    - generic [ref=e82]:
+      - main "Pintor Romero" [ref=e88]:
+        - tablist [ref=e131]:
+          - tab "Información general de Pintor Romero" [ref=e132]:
+            - generic [ref=e134]: Vista general
+          - tab "Reseñas de Pintor Romero" [active] [selected] [ref=e136]:
+            - generic [ref=e138]: Reseñas
+        - generic [ref=e716]:
+          - generic [ref=e718]:
+            - table [ref=e720]:
+              - rowgroup [ref=e721]:
+                - img "5 estrellas, 16 reseñas" [ref=e722]: "5"
+                - img "4 estrellas, 0 reseñas" [ref=e725]: "4"
+                - img "3 estrellas, 0 reseñas" [ref=e728]: "3"
+                - img "2 estrellas, 1 reseña" [ref=e731]: "2"
+                - img "1 estrellas, 0 reseñas" [ref=e734]: "1"
+            - generic [ref=e737]:
+              - generic [ref=e738]: 4,8
+              - img "4,8 estrellas" [ref=e739]
+              - generic [ref=e745]: 17 reseñas
+          - generic [ref=e747]:
+            - generic [ref=e748]: Las reseñas no se verifican
+            - button "Más información sobre los avisos legales en relación con las reseñas públicas en Google Maps" [ref=e752]:
+              - generic [ref=e756]: 
+          - button "Escribir una reseña" [ref=e760] [cursor=pointer]:
+            - generic [ref=e761]:
+              - generic [ref=e762]: 
+              - generic [ref=e763]: Escribir una reseña
+          - generic [ref=e766]:
+            - button "Buscar reseñas" [ref=e772] [cursor=pointer]:
+              - generic [ref=e774]: 
+            - button "Ordenar reseñas" [ref=e776] [cursor=pointer]:
+              - generic [ref=e777]:
+                - generic [ref=e778]: 
+                - generic [ref=e779]: Ordenar
+          - radiogroup "Filtrar reseñas" [ref=e780]:
+            - radio "Todas las reseñas" [checked] [ref=e782] [cursor=pointer]:
+              - generic [ref=e784]: Todas
+            - radio "vivienda, mencionado en 3 reseñas" [ref=e786] [cursor=pointer]:
+              - generic [ref=e787]:
+                - generic [ref=e788]: vivienda
+                - generic [ref=e789]: "3"
+            - radio "paredes, mencionado en 3 reseñas" [ref=e791] [cursor=pointer]:
+              - generic [ref=e792]:
+                - generic [ref=e793]: paredes
+                - generic [ref=e794]: "3"
+            - radio "comunidad, mencionado en 2 reseñas" [ref=e796] [cursor=pointer]:
+              - generic [ref=e797]:
+                - generic [ref=e798]: comunidad
+                - generic [ref=e799]: "2"
+            - radio "puertas, mencionado en 2 reseñas" [ref=e801] [cursor=pointer]:
+              - generic [ref=e802]:
+                - generic [ref=e803]: puertas
+                - generic [ref=e804]: "2"
+            - radio "precio, mencionado en 2 reseñas" [ref=e806] [cursor=pointer]:
+              - generic [ref=e807]:
+                - generic [ref=e808]: precio
+                - generic [ref=e809]: "2"
+          - generic [ref=e810]:
+            - generic "Carlos Casado" [ref=e811]:
+              - generic [ref=e813]:
+                - button "Foto de Carlos Casado" [ref=e814]
+                - generic [ref=e816]:
+                  - button "Carlos Casado 5 reseñas · 8 fotos" [ref=e818]:
+                    - generic [ref=e819]: Carlos Casado
+                    - generic [ref=e820]: 5 reseñas · 8 fotos
+                  - button "Acciones en la reseña de Carlos Casado" [ref=e821] [cursor=pointer]:
+                    - generic [ref=e823]: 
+                - generic [ref=e824]:
+                  - generic [ref=e825]:
+                    - img "5 estrellas" [ref=e826]:
+                      - generic [ref=e827]: 
+                      - generic [ref=e828]: 
+                      - generic [ref=e829]: 
+                      - generic [ref=e830]: 
+                      - generic [ref=e831]: 
+                    - generic [ref=e832]: Hace 5 meses
+                  - generic [ref=e834]: Excelente trabajo! El pintor transformó tanto la fachada exterior como el interior de nuestra casa. El acabado es impecable, las líneas son perfectas y la calidad es evidente. Un profesional puntual, limpio y muy meticuloso.Totalmente recomendado
+                  - generic [ref=e835]:
+                    - button "Foto 1 de la reseña de Carlos Casado" [ref=e836] [cursor=pointer]
+                    - button "Foto 2 de la reseña de Carlos Casado" [ref=e837] [cursor=pointer]
+                    - button "Foto 3 de la reseña de Carlos Casado" [ref=e838] [cursor=pointer]
+                    - button "+ 5 fotos más en la reseña de Carlos Casado" [ref=e839] [cursor=pointer]:
+                      - generic [ref=e840]: "+5"
+                  - generic [ref=e841]:
+                    - button "Me gusta" [ref=e842]:
+                      - generic [ref=e843] [cursor=pointer]:
+                        - generic [ref=e844]: 
+                        - generic [ref=e846]: Me gusta
+                    - button "Compartir reseña de Carlos Casado." [ref=e847]:
+                      - generic [ref=e848] [cursor=pointer]:
+                        - generic [ref=e849]: 
+                        - generic [ref=e850]: Compartir
+            - generic "Marcelino Rutea López" [ref=e854]:
+              - generic [ref=e856]:
+                - button "Foto de Marcelino Rutea López" [ref=e857]
+                - generic [ref=e859]:
+                  - button "Marcelino Rutea López 6 reseñas · 2 fotos" [ref=e861]:
+                    - generic [ref=e862]: Marcelino Rutea López
+                    - generic [ref=e863]: 6 reseñas · 2 fotos
+                  - button "Acciones en la reseña de Marcelino Rutea López" [ref=e864] [cursor=pointer]:
+                    - generic [ref=e866]: 
+                - generic [ref=e867]:
+                  - generic [ref=e868]:
+                    - img "5 estrellas" [ref=e869]:
+                      - generic [ref=e870]: 
+                      - generic [ref=e871]: 
+                      - generic [ref=e872]: 
+                      - generic [ref=e873]: 
+                      - generic [ref=e874]: 
+                    - generic [ref=e875]: Hace un año
+                  - generic [ref=e877]: Muy satisfecho. Le han dado un lavado de cara estupendo a mi vivienda. Corrigiendo defectos y sugiriendo ideas útiles. A los viejos azulejos les han dado un aire muy nuevo. Encantado.
+                  - generic [ref=e878]:
+                    - button "Foto 1 de la reseña de Marcelino Rutea López" [ref=e879] [cursor=pointer]
+                    - button "Foto 2 de la reseña de Marcelino Rutea López" [ref=e880] [cursor=pointer]
+                  - generic [ref=e881]:
+                    - button "Me gusta" [ref=e882]:
+                      - generic [ref=e883] [cursor=pointer]:
+                        - generic [ref=e884]: 
+                        - generic [ref=e886]: Me gusta
+                    - button "Compartir reseña de Marcelino Rutea López." [ref=e887]:
+                      - generic [ref=e888] [cursor=pointer]:
+                        - generic [ref=e889]: 
+                        - generic [ref=e890]: Compartir
+            - generic "Julia Garcia Muñoz" [ref=e894]:
+              - generic [ref=e896]:
+                - button "Foto de Julia Garcia Muñoz" [ref=e897]
+                - generic [ref=e899]:
+                  - button "Julia Garcia Muñoz 11 reseñas · 9 fotos" [ref=e901]:
+                    - generic [ref=e902]: Julia Garcia Muñoz
+                    - generic [ref=e903]: 11 reseñas · 9 fotos
+                  - button "Acciones en la reseña de Julia Garcia Muñoz" [ref=e904] [cursor=pointer]:
+                    - generic [ref=e906]: 
+                - generic [ref=e907]:
+                  - generic [ref=e908]:
+                    - img "5 estrellas" [ref=e909]:
+                      - generic [ref=e910]: 
+                      - generic [ref=e911]: 
+                      - generic [ref=e912]: 
+                      - generic [ref=e913]: 
+                      - generic [ref=e914]: 
+                    - generic [ref=e915]: Hace 2 años
+                  - generic [ref=e917]:
+                    - text: Muy contenta con su trabajo. Pintó una vivienda que tenía las paredes llenas de imperfecciones, taladros, fisuras... También pintó puertas y algún mueble viejo. Ha quedado espectacular, paredes, techos y puertas nuevos. Utiliza materiales de alta calidad. Lo he recomendado a familiares y amigos.
+                    - button "Ver más" [ref=e919] [cursor=pointer]: Más
+                  - button "Foto 1 de la reseña de Julia Garcia Muñoz" [ref=e921] [cursor=pointer]
+                  - generic [ref=e922]:
+                    - button "2 Me gusta" [ref=e923]:
+                      - generic [ref=e924] [cursor=pointer]:
+                        - generic [ref=e925]: 
+                        - generic [ref=e927]: "2"
+                    - button "Compartir reseña de Julia Garcia Muñoz." [ref=e928]:
+                      - generic [ref=e929] [cursor=pointer]:
+                        - generic [ref=e930]: 
+                        - generic [ref=e931]: Compartir
+                  - generic [ref=e932]:
+                    - generic [ref=e933]: Respuesta del propietario Hace 2 años
+                    - generic [ref=e934]: Muchas gracias Julia
+            - generic "C R" [ref=e938]:
+              - generic [ref=e940]:
+                - button "Foto de C R" [ref=e941]
+                - generic [ref=e943]:
+                  - button "C R Local Guide · 15 reseñas · 14 fotos" [ref=e945]:
+                    - generic [ref=e946]: C R
+                    - generic [ref=e947]: Local Guide · 15 reseñas · 14 fotos
+                  - button "Acciones en la reseña de C R" [ref=e948] [cursor=pointer]:
+                    - generic [ref=e950]: 
+                - generic [ref=e951]:
+                  - generic [ref=e952]:
+                    - img "5 estrellas" [ref=e953]:
+                      - generic [ref=e954]: 
+                      - generic [ref=e955]: 
+                      - generic [ref=e956]: 
+                      - generic [ref=e957]: 
+                      - generic [ref=e958]: 
+                    - generic [ref=e959]: Hace 5 meses
+                  - generic [ref=e961]: Un profesional. Muy atento y limpio en su trabajo. Ninguna pega. Un 10. Lo recomiendo al 100%.
+                  - generic [ref=e962]:
+                    - button "Me gusta" [ref=e963]:
+                      - generic [ref=e964] [cursor=pointer]:
+                        - generic [ref=e965]: 
+                        - generic [ref=e967]: Me gusta
+                    - button "Compartir reseña de C R." [ref=e968]:
+                      - generic [ref=e969] [cursor=pointer]:
+                        - generic [ref=e970]: 
+                        - generic [ref=e971]: Compartir
+            - generic "Joaquim Lloret" [ref=e975]:
+              - generic [ref=e977]:
+                - button "Foto de Joaquim Lloret" [ref=e978]
+                - generic [ref=e980]:
+                  - button "Joaquim Lloret 11 reseñas" [ref=e982]:
+                    - generic [ref=e983]: Joaquim Lloret
+                    - generic [ref=e984]: 11 reseñas
+                  - button "Acciones en la reseña de Joaquim Lloret" [ref=e985] [cursor=pointer]:
+                    - generic [ref=e987]: 
+                - generic [ref=e988]:
+                  - generic [ref=e989]:
+                    - img "2 estrellas" [ref=e990]:
+                      - generic [ref=e991]: 
+                      - generic [ref=e992]: 
+                      - generic [ref=e993]: 
+                      - generic [ref=e994]: 
+                      - generic [ref=e995]: 
+                    - generic [ref=e996]: Hace un año
+                  - generic [ref=e998]:
+                    - text: No lo podemos recomendar, a pesar de la buena disposición e intento de justificación de lo que se comenta a continuación. No cumplió con las fechas, a pesar de haberlas cerrado con más de un mes de antelación, y realizó el trabajo a prisas…
+                    - button "Ver más" [ref=e1000] [cursor=pointer]: Más
+                  - generic [ref=e1001]:
+                    - button "Me gusta" [ref=e1002]:
+                      - generic [ref=e1003] [cursor=pointer]:
+                        - generic [ref=e1004]: 
+                        - generic [ref=e1006]: Me gusta
+                    - button "Compartir reseña de Joaquim Lloret." [ref=e1007]:
+                      - generic [ref=e1008] [cursor=pointer]:
+                        - generic [ref=e1009]: 
+                        - generic [ref=e1010]: Compartir
+            - generic "Mila" [ref=e1014]:
+              - generic [ref=e1016]:
+                - button "Foto de Mila" [ref=e1017]
+                - generic [ref=e1019]:
+                  - button "Mila Local Guide · 46 reseñas · 71 fotos" [ref=e1021]:
+                    - generic [ref=e1022]: Mila
+                    - generic [ref=e1023]: Local Guide · 46 reseñas · 71 fotos
+                  - button "Acciones en la reseña de Mila" [ref=e1024] [cursor=pointer]:
+                    - generic [ref=e1026]: 
+                - generic [ref=e1027]:
+                  - generic [ref=e1028]:
+                    - img "5 estrellas" [ref=e1029]:
+                      - generic [ref=e1030]: 
+                      - generic [ref=e1031]: 
+                      - generic [ref=e1032]: 
+                      - generic [ref=e1033]: 
+                      - generic [ref=e1034]: 
+                    - generic [ref=e1035]: Hace 2 años
+                  - generic [ref=e1037]:
+                    - text: Estoy muy contenta con el trabajo que realizo Fran.Nos pinto el patio de la comunidad y como quedamos contentos con el lo llamé para que pintara el pasillo y el dormitorio de mi casa.
+                    - button "Ver más" [ref=e1039] [cursor=pointer]: Más
+                  - generic [ref=e1040]:
+                    - button "Foto 1 de la reseña de Mila" [ref=e1041] [cursor=pointer]
+                    - button "Foto 2 de la reseña de Mila" [ref=e1042] [cursor=pointer]
+                  - generic [ref=e1043]:
+                    - button "3 Me gusta" [ref=e1044]:
+                      - generic [ref=e1045] [cursor=pointer]:
+                        - generic [ref=e1046]: 
+                        - generic [ref=e1048]: "3"
+                    - button "Compartir reseña de Mila." [ref=e1049]:
+                      - generic [ref=e1050] [cursor=pointer]:
+                        - generic [ref=e1051]: 
+                        - generic [ref=e1052]: Compartir
+                  - generic [ref=e1053]:
+                    - generic [ref=e1054]: Respuesta del propietario Hace 2 años
+                    - generic [ref=e1055]: Muchas gracias
+            - generic "Mayte Fuentes" [ref=e1059]:
+              - generic [ref=e1061]:
+                - button "Foto de Mayte Fuentes" [ref=e1062]
+                - generic [ref=e1064]:
+                  - button "Mayte Fuentes 5 reseñas · 14 fotos" [ref=e1066]:
+                    - generic [ref=e1067]: Mayte Fuentes
+                    - generic [ref=e1068]: 5 reseñas · 14 fotos
+                  - button "Acciones en la reseña de Mayte Fuentes" [ref=e1069] [cursor=pointer]:
+                    - generic [ref=e1071]: 
+                - generic [ref=e1072]:
+                  - generic [ref=e1073]:
+                    - img "5 estrellas" [ref=e1074]:
+                      - generic [ref=e1075]: 
+                      - generic [ref=e1076]: 
+                      - generic [ref=e1077]: 
+                      - generic [ref=e1078]: 
+                      - generic [ref=e1079]: 
+                    - generic [ref=e1080]: Hace 2 años
+                  - generic [ref=e1082]:
+                    - text: Buen profesional, calidad precio de lo mejor. Responsable , sabe cómo resorber cualquier problema, te da las mejores soluciones a cualquier duda que puedas tener, a mi me pinto todo el piso y muy contenta, volveré a llamarlo . Recomendable 100%
+                    - button "Ver más" [ref=e1084] [cursor=pointer]: Más
+                  - generic [ref=e1085]:
+                    - button "2 Me gusta" [ref=e1086]:
+                      - generic [ref=e1087] [cursor=pointer]:
+                        - generic [ref=e1088]: 
+                        - generic [ref=e1090]: "2"
+                    - button "Compartir reseña de Mayte Fuentes." [ref=e1091]:
+                      - generic [ref=e1092] [cursor=pointer]:
+                        - generic [ref=e1093]: 
+                        - generic [ref=e1094]: Compartir
+            - generic "Miguel Rodrigo Alejos" [ref=e1098]:
+              - generic [ref=e1100]:
+                - button "Foto de Miguel Rodrigo Alejos" [ref=e1101]
+                - generic [ref=e1103]:
+                  - button "Miguel Rodrigo Alejos 1 reseña" [ref=e1105]:
+                    - generic [ref=e1106]: Miguel Rodrigo Alejos
+                    - generic [ref=e1107]: 1 reseña
+                  - button "Acciones en la reseña de Miguel Rodrigo Alejos" [ref=e1108] [cursor=pointer]:
+                    - generic [ref=e1110]: 
+                - generic [ref=e1111]:
+                  - generic [ref=e1112]:
+                    - img "5 estrellas" [ref=e1113]:
+                      - generic [ref=e1114]: 
+                      - generic [ref=e1115]: 
+                      - generic [ref=e1116]: 
+                      - generic [ref=e1117]: 
+                      - generic [ref=e1118]: 
+                    - generic [ref=e1119]: Hace un año
+                  - generic [ref=e1121]: Muy profesional y atento. Muy contentos con su servicio. Buen precio y buen trabajo👌…
+                  - generic [ref=e1122]:
+                    - button "Me gusta" [ref=e1123]:
+                      - generic [ref=e1124] [cursor=pointer]:
+                        - generic [ref=e1125]: 
+                        - generic [ref=e1127]: Me gusta
+                    - button "Compartir reseña de Miguel Rodrigo Alejos." [ref=e1128]:
+                      - generic [ref=e1129] [cursor=pointer]:
+                        - generic [ref=e1130]: 
+                        - generic [ref=e1131]: Compartir
+            - generic "Sari Ortí" [ref=e1135]:
+              - generic [ref=e1137]:
+                - button "Foto de Sari Ortí" [ref=e1138]
+                - generic [ref=e1140]:
+                  - button "Sari Ortí 7 reseñas · 5 fotos" [ref=e1142]:
+                    - generic [ref=e1143]: Sari Ortí
+                    - generic [ref=e1144]: 7 reseñas · 5 fotos
+                  - button "Acciones en la reseña de Sari Ortí" [ref=e1145] [cursor=pointer]:
+                    - generic [ref=e1147]: 
+                - generic [ref=e1148]:
+                  - generic [ref=e1149]:
+                    - img "5 estrellas" [ref=e1150]:
+                      - generic [ref=e1151]: 
+                      - generic [ref=e1152]: 
+                      - generic [ref=e1153]: 
+                      - generic [ref=e1154]: 
+                      - generic [ref=e1155]: 
+                    - generic [ref=e1156]: Hace 11 meses
+                  - generic [ref=e1158]: Muy contenta con el trabajo que ha hecho en mi casa después de la dana. Lo recomiendo.
+                  - generic [ref=e1159]:
+                    - button "Me gusta" [ref=e1160]:
+                      - generic [ref=e1161] [cursor=pointer]:
+                        - generic [ref=e1162]: 
+                        - generic [ref=e1164]: Me gusta
+                    - button "Compartir reseña de Sari Ortí." [ref=e1165]:
+                      - generic [ref=e1166] [cursor=pointer]:
+                        - generic [ref=e1167]: 
+                        - generic [ref=e1168]: Compartir
+            - generic "Susana GUZMAN SANZ" [ref=e1172]:
+              - generic [ref=e1174]:
+                - button "Foto de Susana GUZMAN SANZ" [ref=e1175]
+                - generic [ref=e1177]:
+                  - button "Susana GUZMAN SANZ 1 reseña" [ref=e1179]:
+                    - generic [ref=e1180]: Susana GUZMAN SANZ
+                    - generic [ref=e1181]: 1 reseña
+                  - button "Acciones en la reseña de Susana GUZMAN SANZ" [ref=e1182] [cursor=pointer]:
+                    - generic [ref=e1184]: 
+                - generic [ref=e1185]:
+                  - generic [ref=e1186]:
+                    - img "5 estrellas" [ref=e1187]:
+                      - generic [ref=e1188]: 
+                      - generic [ref=e1189]: 
+                      - generic [ref=e1190]: 
+                      - generic [ref=e1191]: 
+                      - generic [ref=e1192]: 
+                    - generic [ref=e1193]: Hace 2 años
+                  - generic [ref=e1195]:
+                    - text: Muy contenta del trabajo que han realizado. El trato ha sido fácil y muy bueno. Es cumplidor y muy profesional. Totalmente recomendable.
+                    - button "Ver más" [ref=e1197] [cursor=pointer]: Más
+                  - generic [ref=e1198]:
+                    - button "Me gusta" [ref=e1199]:
+                      - generic [ref=e1200] [cursor=pointer]:
+                        - generic [ref=e1201]: 
+                        - generic [ref=e1203]: Me gusta
+                    - button "Compartir reseña de Susana GUZMAN SANZ." [ref=e1204]:
+                      - generic [ref=e1205] [cursor=pointer]:
+                        - generic [ref=e1206]: 
+                        - generic [ref=e1207]: Compartir
+      - button "Ocultar el panel lateral" [ref=e637] [cursor=pointer]:
+        - generic [ref=e638]: 
+    - generic [ref=e642]:
+      - button "Aplicaciones de Google" [ref=e646] [cursor=pointer]:
+        - img [ref=e647]
+      - 'button "Cuenta de Google: Chus Carvajal (carvajalphotos@gmail.com)" [ref=e652] [cursor=pointer]':
+        - img [ref=e654]
+        - img [ref=e660]
+    - generic [ref=e661]:
+      - generic:
+        - button "Mostrar tu ubicación" [ref=e664] [cursor=pointer]:
+          - generic [ref=e666]: 
+        - generic [ref=e668] [cursor=pointer]:
+          - button "Ampliar" [ref=e669]
+          - button "Reducir" [ref=e672]
+      - generic [ref=e678]:
+        - button "Ver imágenes de Street View" [ref=e680]
+        - button "Street View" [ref=e682] [cursor=pointer]
+      - generic [ref=e690]:
+        - generic "Mapa interactivo" [ref=e691]
+        - generic [ref=e695] [cursor=pointer]:
+          - generic [ref=e696]: 
+          - generic [ref=e697]: Capas
+        - button "Capas" [ref=e698] [cursor=pointer]
+    - generic [ref=e700]:
+      - contentinfo [ref=e703]:
+        - text: Imágenes ©2026 , Datos del mapa ©2026 Inst. Geogr. Nacional, Google
+        - button "España" [ref=e704] [cursor=pointer]
+        - button "Términos" [ref=e705] [cursor=pointer]
+        - button "Privacidad" [ref=e706] [cursor=pointer]
+        - button "Enviar comentarios sobre el producto" [ref=e707] [cursor=pointer]
+      - button "100 m" [ref=e709] [cursor=pointer]: 100 m

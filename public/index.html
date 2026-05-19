@@ -1,0 +1,1133 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vilacolor — Pintores en Cubelles</title>
+    <meta name="description" content="Servicios de pintura y saneamiento en Cubelles. Carlos y su equipo ofrecen presupuestos rápidos, comunicación clara y trabajos de máxima calidad." />
+    <link rel="icon" href="assets/image/svg/logo.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Outfit', 'system-ui', 'sans-serif'] },
+            colors: {
+              brand: { DEFAULT: '#FF2424', 50:'#FFF2F2', 100:'#FFE0E0', 500:'#FF2424', 600:'#E81818', 700:'#C30E0E' },
+              ink: { DEFAULT:'#0E1116', soft:'#3A3F47', mute:'#6B7280' },
+              cream: '#FFF7F2',
+            },
+            letterSpacing: { tightish:'-0.025em', tighter2:'-0.035em' },
+            boxShadow: {
+              card: '0 18px 40px -20px rgba(255,36,36,0.18), 0 4px 12px -4px rgba(14,17,22,0.06)',
+              soft: '0 30px 60px -30px rgba(14,17,22,0.18)',
+              ring: '0 0 0 1px rgba(14,17,22,0.06), 0 30px 60px -30px rgba(255,36,36,0.25)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root { --brand:#FF2424; --ink:#0E1116; }
+      html { scroll-behavior: smooth; }
+      body { font-family:'Outfit', system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; }
+      .eyebrow { display:inline-flex; align-items:center; gap:.55rem; font-size:13px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--brand); }
+      .eyebrow::before { content:''; width:28px; height:2px; background:currentColor; border-radius:9999px; }
+      .display { font-weight:700; letter-spacing:-0.035em; line-height:1.05; color:var(--ink); }
+      .btn { display:inline-flex; align-items:center; gap:.75rem; padding:.95rem 1.5rem; border-radius:9999px; font-weight:600; transition:transform .25s cubic-bezier(.2,.7,.2,1.2), background-color .25s, color .25s, box-shadow .25s; }
+      .btn:hover { transform:translateY(-2px); }
+      .btn:active { transform:translateY(0); }
+      .btn:focus-visible { outline:2px solid var(--brand); outline-offset:3px; }
+      .btn-primary { background:var(--brand); color:white; box-shadow:0 12px 30px -12px rgba(255,36,36,.55); }
+      .btn-primary:hover { background:#E81818; }
+      .btn-ghost { background:white; color:var(--ink); border:1px solid rgba(14,17,22,.1); }
+      .btn-ghost:hover { border-color:var(--brand); color:var(--brand); }
+      .btn-dark { background:var(--ink); color:white; }
+      .btn-dark:hover { background:var(--brand); }
+      .btn .arrow { display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:9999px; background:rgba(255,255,255,.18); transition:transform .25s; }
+      .btn-ghost .arrow, .btn-light .arrow { background:#FFF1F1; color:var(--brand); }
+      .btn:hover .arrow { transform: rotate(-45deg); }
+      .reveal { opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease; }
+      .reveal.in { opacity:1; transform:none; }
+      .num-counter { font-variant-numeric: tabular-nums; }
+      .marquee { display:flex; gap:3rem; animation:marquee 30s linear infinite; }
+      @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+      .grain::after { content:''; position:absolute; inset:0; pointer-events:none; opacity:.35; mix-blend-mode:overlay;
+        background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      }
+
+      .proj { position:relative; overflow:hidden; border-radius:24px; }
+      .proj img { transition:transform .7s cubic-bezier(.2,.7,.2,1); display:block; width:100%; height:100%; object-fit:cover; }
+      .proj:hover img { transform:scale(1.08); }
+      .proj .veil { position:absolute; inset:0; background:linear-gradient(180deg, rgba(14,17,22,0) 35%, rgba(14,17,22,.78) 100%); }
+      .proj .label { position:absolute; left:1.25rem; bottom:1.1rem; right:1.25rem; color:white; }
+
+      .svc-card { transition: transform .35s cubic-bezier(.2,.7,.2,1.2), background-color .35s; }
+      .svc-card:hover { transform: translateY(-6px); background:#FFF7F2; }
+      .svc-card .icon-wrap { transition: background-color .35s, transform .35s; }
+      .svc-card:hover .icon-wrap { background:#FFE3E3; }
+
+      .feature-card { transition: transform .35s, box-shadow .35s, border-color .35s; }
+      .feature-card:hover { transform: translateY(-4px); border-color: rgba(255,36,36,.4); }
+
+      .step-num { font-weight:800; font-size:64px; line-height:1; letter-spacing:-0.04em;
+        background:linear-gradient(180deg, rgba(255,36,36,.25), rgba(255,36,36,0));
+        -webkit-background-clip:text; background-clip:text; color:transparent;
+      }
+
+      .hero-grad { background:
+        radial-gradient(80% 60% at 80% 30%, rgba(255,36,36,.18), transparent 60%),
+        radial-gradient(60% 40% at 10% 80%, rgba(0,0,0,.55), transparent 60%),
+        linear-gradient(180deg, rgba(14,17,22,.55), rgba(14,17,22,.85));
+      }
+
+      /* Decorative paint stroke */
+      .stroke-arc { position:absolute; pointer-events:none; }
+
+      /* Roll/parallax image clip */
+      .roll-img { clip-path: inset(0 round 32px); }
+
+      /* Hanging brush sway */
+      @keyframes sway { 0%,100% { transform: rotate(-3deg);} 50% { transform: rotate(3deg);} }
+      .brush-sway { transform-origin: top center; animation: sway 4.5s ease-in-out infinite; will-change: transform; }
+
+      /* Appointment section floating brush */
+      @keyframes floatUpDown {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-15px); }
+      }
+      .brush-float { animation: floatUpDown 4s ease-in-out infinite; }
+
+      /* Footer social icon — red wave-in on hover */
+      .social-icon {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 9999px;
+        background-color: #191919;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform .4s ease;
+      }
+      .social-icon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background-color: #FF2424;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width .5s ease, height .5s ease;
+        z-index: 1;
+      }
+      .social-icon:hover::before { width: 120%; height: 120%; }
+      .social-icon img { position: relative; z-index: 2; }
+    </style>
+  </head>
+
+  <body class="bg-white text-ink overflow-x-hidden">
+    <!-- ───────── HEADER ───────── -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-black/5">
+      <div class="w-full px-5 lg:px-12 xl:px-20 h-20 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2">
+          <span class="text-[22px] lg:text-[26px] font-black tracking-tight text-brand leading-none">VILACOLOR<br/><span class="text-ink text-[16px]">PINTORES</span></span>
+        </a>
+        <nav class="hidden lg:flex items-center gap-9 text-[15px] font-medium text-ink/80">
+          <a href="#inicio" class="hover:text-brand transition-colors">Inicio</a>
+          <a href="#servicios" class="hover:text-brand transition-colors">Servicios</a>
+          <a href="#nosotros" class="hover:text-brand transition-colors">Nosotros</a>
+          <a href="#proyectos" class="hover:text-brand transition-colors">Proyectos</a>
+          <a href="#blog" class="hover:text-brand transition-colors">Blog</a>
+          <a href="#ubicacion" class="hover:text-brand transition-colors">Ubicación</a>
+          <a href="#contacto" class="hover:text-brand transition-colors">Contacto</a>
+        </nav>
+        <a href="#contacto" class="btn btn-primary text-[15px] hidden md:inline-flex">
+          Pedir cita
+          <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+        </a>
+        <button class="lg:hidden grid place-items-center w-10 h-10 rounded-xl border border-black/10" aria-label="Menú">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ───────── HERO ───────── -->
+    <section id="inicio" class="relative overflow-hidden isolate bg-black">
+      <!-- Full-bleed hero photo (paint brush + paint cans) -->
+      <img src="assets/image/home/hero1.jpg" alt="" class="absolute inset-0 w-full h-full object-cover z-0"/>
+      <!-- Subtle left-side darkening so the white text remains readable -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent z-[1]"></div>
+
+      <div class="mx-auto max-w-[1320px] px-5 lg:px-8 pt-28 pb-28 lg:pt-36 lg:pb-40 min-h-[680px] lg:min-h-[760px] flex items-center relative z-10">
+        <div class="max-w-3xl text-white reveal">
+          <!-- Eyebrow: plain caps, no dot decoration -->
+          <p class="text-white text-[15px] font-medium uppercase tracking-[.22em]">
+            Saneamiento y pintura profesional
+          </p>
+
+          <!-- Headline: 79px-ish white, tight leading -->
+          <h1 class="mt-5 text-white font-bold leading-[1.05] tracking-tighter2 text-[44px] sm:text-6xl lg:text-[68px] xl:text-[76px]">
+            Pintores en Cubelles —<br/>un servicio de 10
+          </h1>
+
+          <!-- Red vertical line + paragraph -->
+          <div class="mt-10 flex items-stretch gap-5 max-w-xl">
+            <span class="block w-[3px] rounded-full bg-brand"></span>
+            <p class="text-white/85 text-lg lg:text-[20px] leading-[1.6]">
+              Un equipo de profesionales especializado en técnicas variadas y maestros del equilibrio
+              cromático. Acabados impecables y duraderos.
+            </p>
+          </div>
+
+          <!-- Single red CTA -->
+          <div class="mt-10">
+            <a href="#servicios" class="btn btn-primary text-[16px] px-7 py-4">
+              Nuestros servicios
+              <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── WHAT WE OFFER + COUNTERS ───────── -->
+    <section id="servicios" class="pt-24 lg:pt-28 pb-20 bg-white">
+      <div class="mx-auto max-w-[1320px] px-5 lg:px-8">
+        <!-- Section header: title only on the left -->
+        <div class="mb-14 lg:mb-20">
+          <span class="eyebrow">Qué ofrecemos</span>
+          <h2 class="display text-4xl lg:text-5xl xl:text-6xl mt-5 max-w-2xl">
+            Damos vida a tus<br/>proyectos ideales
+          </h2>
+        </div>
+
+        <!-- 4 flat services -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 lg:gap-x-10">
+
+          <a href="#" class="group block">
+            <img src="assets/image/svg/offer1.svg" alt="" class="w-16 h-16 lg:w-20 lg:h-20 transition-transform duration-500 group-hover:-translate-y-1"/>
+            <h3 class="mt-8 text-3xl lg:text-[34px] font-bold tracking-tighter2 leading-[1.1]">
+              Pintura<br/>Interior
+            </h3>
+            <p class="mt-4 text-[15px] text-ink/60 leading-relaxed max-w-[260px]">
+              Alisado de paredes, eliminación de gotelé y aplicación de pintura plástica de máxima calidad.
+            </p>
+            <span class="mt-6 inline-flex items-center gap-0 overflow-hidden h-10 rounded-full bg-cream text-brand pl-3 pr-3 transition-[background-color,color,padding,gap] duration-300 ease-out group-hover:bg-brand group-hover:text-white group-hover:gap-2 group-hover:pl-5 group-hover:pr-3">
+              <span class="max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap text-sm font-semibold tracking-wide transition-[max-width] duration-300 ease-out">Leer más</span>
+              <svg viewBox="0 0 24 24" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="group block">
+            <img src="assets/image/svg/offer2.svg" alt="" class="w-16 h-16 lg:w-20 lg:h-20 transition-transform duration-500 group-hover:-translate-y-1"/>
+            <h3 class="mt-8 text-3xl lg:text-[34px] font-bold tracking-tighter2 leading-[1.1]">
+              Pintura<br/>Exterior
+            </h3>
+            <p class="mt-4 text-[15px] text-ink/60 leading-relaxed max-w-[260px]">
+              Rehabilitación de fachadas y aplicación de revestimientos impermeables de larga duración.
+            </p>
+            <span class="mt-6 inline-flex items-center gap-0 overflow-hidden h-10 rounded-full bg-cream text-brand pl-3 pr-3 transition-[background-color,color,padding,gap] duration-300 ease-out group-hover:bg-brand group-hover:text-white group-hover:gap-2 group-hover:pl-5 group-hover:pr-3">
+              <span class="max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap text-sm font-semibold tracking-wide transition-[max-width] duration-300 ease-out">Leer más</span>
+              <svg viewBox="0 0 24 24" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="group block">
+            <img src="assets/image/svg/offer3.svg" alt="" class="w-16 h-16 lg:w-20 lg:h-20 transition-transform duration-500 group-hover:-translate-y-1"/>
+            <h3 class="mt-8 text-3xl lg:text-[34px] font-bold tracking-tighter2 leading-[1.1]">
+              Locales y<br/>Negocios
+            </h3>
+            <p class="mt-4 text-[15px] text-ink/60 leading-relaxed max-w-[260px]">
+              Renovación rápida de espacios comerciales y oficinas con horarios flexibles.
+            </p>
+            <span class="mt-6 inline-flex items-center gap-0 overflow-hidden h-10 rounded-full bg-cream text-brand pl-3 pr-3 transition-[background-color,color,padding,gap] duration-300 ease-out group-hover:bg-brand group-hover:text-white group-hover:gap-2 group-hover:pl-5 group-hover:pr-3">
+              <span class="max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap text-sm font-semibold tracking-wide transition-[max-width] duration-300 ease-out">Leer más</span>
+              <svg viewBox="0 0 24 24" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a href="#" class="group block">
+            <img src="assets/image/svg/offer4.svg" alt="" class="w-16 h-16 lg:w-20 lg:h-20 transition-transform duration-500 group-hover:-translate-y-1"/>
+            <h3 class="mt-8 text-3xl lg:text-[34px] font-bold tracking-tighter2 leading-[1.1]">
+              Acabados<br/>Decorativos
+            </h3>
+            <p class="mt-4 text-[15px] text-ink/60 leading-relaxed max-w-[260px]">
+              Instalación de papel pintado, lacado de puertas y técnicas de alta decoración.
+            </p>
+            <span class="mt-6 inline-flex items-center gap-0 overflow-hidden h-10 rounded-full bg-cream text-brand pl-3 pr-3 transition-[background-color,color,padding,gap] duration-300 ease-out group-hover:bg-brand group-hover:text-white group-hover:gap-2 group-hover:pl-5 group-hover:pr-3">
+              <span class="max-w-0 group-hover:max-w-[120px] overflow-hidden whitespace-nowrap text-sm font-semibold tracking-wide transition-[max-width] duration-300 ease-out">Leer más</span>
+              <svg viewBox="0 0 24 24" class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+
+        </div>
+
+        <!-- Counters -->
+        <div class="mt-24 lg:mt-28 pt-14 border-t border-black/[.07] grid grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6 text-center lg:text-left">
+          <div>
+            <div class="num-counter text-5xl lg:text-6xl font-extrabold tracking-tighter2 text-ink" data-counter="2567">0</div>
+            <div class="mt-1 text-sm font-medium text-ink/60 uppercase tracking-[.18em]">Clientes felices</div>
+          </div>
+          <div>
+            <div class="num-counter text-5xl lg:text-6xl font-extrabold tracking-tighter2 text-ink" data-counter="3548">0</div>
+            <div class="mt-1 text-sm font-medium text-ink/60 uppercase tracking-[.18em]">Proyectos</div>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-center lg:justify-start gap-1">
+              <div class="num-counter text-5xl lg:text-6xl font-extrabold tracking-tighter2 text-ink" data-counter="17">0</div>
+              <span class="text-4xl font-extrabold text-brand">+</span>
+            </div>
+            <div class="mt-1 text-sm font-medium text-ink/60 uppercase tracking-[.18em]">Años de oficio</div>
+          </div>
+          <div>
+            <div class="num-counter text-5xl lg:text-6xl font-extrabold tracking-tighter2 text-ink" data-counter="1293">0</div>
+            <div class="mt-1 text-sm font-medium text-ink/60 uppercase tracking-[.18em]">Cafés compartidos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── WHY CHOOSE US ───────── -->
+    <section id="nosotros" class="bg-white py-16 lg:py-20">
+      <div class="mx-auto max-w-[1320px] px-4 lg:px-6">
+        <div class="relative rounded-[40px] lg:rounded-[56px] bg-[#F4F4F5] py-20 lg:py-24 px-5 lg:px-14 overflow-visible">
+          <!-- Top-right blue paint splash — background decoration, low z-index + reduced opacity so the heading remains readable -->
+          <img
+            src="assets/image/home/choose3.png"
+            alt=""
+            aria-hidden="true"
+            class="pointer-events-none select-none absolute right-0 w-[220px] sm:w-[260px] lg:w-[320px] xl:w-[360px] opacity-[.35] z-[1]"
+            style="top:-107px;"
+          />
+          <!-- Paintbrush with blue drip escaping bottom-left (matches original .choose_img2: bottom:-55px; left:-100px) -->
+          <img
+            src="assets/image/home/choose4.png"
+            alt=""
+            aria-hidden="true"
+            class="pointer-events-none select-none absolute -bottom-14 -left-12 lg:-left-24 w-[180px] lg:w-[260px] z-30 brush-sway"
+          />
+
+          <div class="relative z-20 space-y-14 lg:space-y-20">
+            <!-- TOP ROW: big image left + title/features right -->
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+              <div class="lg:col-span-6">
+                <div class="rounded-[28px] overflow-hidden shadow-soft aspect-[5/6]">
+                  <img src="assets/image/home/choose1.jpg" alt="Interior pintado" class="w-full h-full object-cover"/>
+                </div>
+              </div>
+
+              <div class="lg:col-span-6">
+                <span class="eyebrow">Por qué elegirnos</span>
+                <h2 class="display text-4xl sm:text-5xl lg:text-[52px] mt-5">
+                  Carlos y su equipo:<br/>
+                  <span>profesionales de primera.</span>
+                </h2>
+                <p class="mt-7 text-ink/70 leading-[1.8] text-[17px]">
+                  Somos valorados por ofrecer una comunicación rápida, clara y profesional. Entregamos el presupuesto in situ y empezamos a trabajar sin demoras para transformar tu espacio.
+                </p>
+
+                <div class="mt-10 grid sm:grid-cols-2 gap-x-8 gap-y-10">
+                  <div>
+                    <img src="assets/image/svg/chooseimg1.svg" alt="" class="w-14 h-14 mx-auto sm:mx-0"/>
+                    <h3 class="mt-6 text-xl lg:text-[22px] font-bold tracking-tightish leading-snug">
+                      Presupuestos rápidos
+                    </h3>
+                    <p class="mt-3 text-ink/65 leading-relaxed text-[15px]">
+                      Visitamos tu domicilio para evaluar el trabajo y te damos precio in situ. Transparencia total, precios muy competitivos y máxima seriedad.
+                    </p>
+                  </div>
+                  <div>
+                    <img src="assets/image/svg/chooseimg2.svg" alt="" class="w-14 h-14 mx-auto sm:mx-0"/>
+                    <h3 class="mt-6 text-xl lg:text-[22px] font-bold tracking-tightish leading-snug">
+                      Saneamiento integral
+                    </h3>
+                    <p class="mt-3 text-ink/65 leading-relaxed text-[15px]">
+                      No solo pintamos; saneamos paredes antiguas, reparamos desperfectos y aseguramos que la base esté perfecta antes de aplicar color.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOTTOM ROW: caption paragraph left + painter-with-roller image right -->
+            <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+              <div class="lg:col-span-6">
+                <p class="text-ink/70 leading-[1.85] text-[17px] max-w-md">
+                  Ya sea pintar un piso completo en menos de dos días o restaurar la escalera de una finca antigua, aportamos un valor y un asesoramiento que superará siempre tus expectativas.
+                </p>
+              </div>
+              <div class="lg:col-span-6">
+                <div class="rounded-[28px] overflow-hidden shadow-soft aspect-[16/9]">
+                  <img src="assets/image/home/choose2.jpg" alt="Pintor con rodillo" class="w-full h-full object-cover"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── DISCOVER SERVICES ───────── -->
+    <section class="bg-white py-12 lg:py-16">
+      <div class="mx-auto max-w-[1520px] px-3 lg:px-4">
+        <div class="relative rounded-[40px] lg:rounded-[56px] bg-[#F4F4F5] py-20 lg:py-28 px-6 lg:px-16 overflow-hidden">
+          <div class="relative z-10 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <!-- Left: text + 3 checkmark features -->
+            <div class="lg:col-span-6">
+              <span class="eyebrow">Quiénes somos</span>
+              <h2 class="display text-4xl sm:text-5xl lg:text-[52px] mt-5">
+                Especialistas en<br/>fincas y viviendas
+              </h2>
+              <p class="mt-6 text-ink/70 leading-[1.8] text-[17px]">
+                En Vilacolor somos expertos tanto en el pintado rápido y limpio de pisos particulares, como en el saneamiento complejo de escaleras y vestíbulos de edificios.
+              </p>
+
+              <ul class="mt-8 space-y-5">
+                <li class="flex items-start gap-4">
+                  <span class="shrink-0 grid place-items-center w-10 h-10 rounded-full bg-brand/10 text-brand mt-0.5">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-[19px] font-bold tracking-tightish">Compromiso absoluto</h3>
+                    <p class="mt-1 text-ink/60 text-[15px] leading-relaxed">
+                      Siempre aportamos un "plus" sobre lo acordado, cuidando los detalles más pequeños para asegurar que el acabado sea perfecto.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="shrink-0 grid place-items-center w-10 h-10 rounded-full bg-brand/10 text-brand mt-0.5">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-[19px] font-bold tracking-tightish">Comunidades de vecinos</h3>
+                    <p class="mt-1 text-ink/60 text-[15px] leading-relaxed">
+                      Tenemos muchísima experiencia restaurando fincas antiguas. Eliminamos humedades, saneamos paredes y modernizamos los espacios comunes.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <span class="shrink-0 grid place-items-center w-10 h-10 rounded-full bg-brand/10 text-brand mt-0.5">
+                    <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+                  </span>
+                  <div>
+                    <h3 class="text-[19px] font-bold tracking-tightish">Limpieza tras la obra</h3>
+                    <p class="mt-1 text-ink/60 text-[15px] leading-relaxed">
+                      Dejamos todo inmaculado. Protegemos meticulosamente cada superficie antes de empezar y limpiamos a fondo al terminar.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Right: 2 images + yellow phone card -->
+            <div class="lg:col-span-6">
+              <div class="grid grid-cols-12 gap-4 lg:gap-5">
+                <div class="col-span-7">
+                  <div class="rounded-[24px] overflow-hidden shadow-soft aspect-[3/4]">
+                    <img src="assets/image/home/who1.jpg" alt="Pintor trabajando" class="w-full h-full object-cover"/>
+                  </div>
+                </div>
+                <div class="col-span-5 flex flex-col gap-4 lg:gap-5">
+                  <!-- Yellow "need help now" card -->
+                  <div class="rounded-[20px] bg-yellow-300 text-ink p-5 flex flex-col gap-3 shadow-soft">
+                    <span class="grid place-items-center w-11 h-11 rounded-full bg-ink text-yellow-300">
+                      <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.1 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </span>
+                    <div class="text-[11px] font-bold uppercase tracking-[.18em] text-ink/70">¿Necesitas ayuda ya?</div>
+                    <a href="tel:+34688469104" class="text-[20px] font-extrabold tracking-tightish leading-tight">688 46 91 04</a>
+                  </div>
+                  <div class="rounded-[20px] overflow-hidden shadow-soft aspect-[4/5]">
+                    <img src="assets/image/home/who2.jpg" alt="Detalle pintura" class="w-full h-full object-cover"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── CTA BANNER ───────── -->
+    <section id="cta-banner" class="px-5 lg:px-8 py-10">
+      <div class="mx-auto max-w-[1320px] rounded-[32px] text-white p-10 lg:p-14 relative overflow-hidden grain bg-cover bg-center"
+           style="background-image: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('assets/image/home/meet.jpg');">
+        <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full border-[40px] border-white/[.05] pointer-events-none"></div>
+        <div class="absolute -left-12 -bottom-20 w-64 h-64 rounded-full border-[28px] border-white/[.05] pointer-events-none"></div>
+
+        <div class="relative grid lg:grid-cols-12 gap-8 items-center">
+          <h3 class="display text-3xl lg:text-[40px] text-white lg:col-span-7 leading-tight">
+            Agenda una visita técnica o escríbenos con tu duda.
+          </h3>
+          <div class="lg:col-span-5 flex flex-wrap gap-4 lg:justify-end">
+            <a href="#cita" class="btn btn-primary">
+              Pedir presupuesto
+              <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+            </a>
+            <a href="#contacto" class="btn border border-white/30 text-white hover:bg-white hover:text-ink">
+              Contactar
+              <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── PROJECTS ───────── -->
+    <section id="proyectos" class="py-24">
+      <div class="mx-auto max-w-[1320px] px-5 lg:px-8">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <div>
+            <span class="eyebrow">Nuestros trabajos</span>
+            <h2 class="display text-4xl lg:text-5xl mt-4">Proyectos recientes</h2>
+          </div>
+          <a href="#contacto" class="btn btn-ghost self-start lg:self-auto">
+            Ver portfolio completo
+            <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/p/AF1QipPCvLRdzLXXCpA10HqeGCD4Pn_zF715-2F-6YU=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Vivienda</div><div class="font-bold text-lg tracking-tightish">Salón con chimenea</div></div></a>
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFQzo5GctyYwFFpWH8f4Mj6lRSJ5FZEbBzfwE7NvjgzLMhvwcjpH4xDpvB8I3gI8VuRUKwSGN16C4zmFbG4aFdu2WHZAvkfC5-O5OP3sIeiNH1_FQqTD5ojTxsEhDBIL_JySVIz=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Exterior</div><div class="font-bold text-lg tracking-tightish">Fachada blanca y valla</div></div></a>
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/p/AF1QipMaFAyGKr6ty09dajmw8_TYWNbgUDSvsh1pSlM=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Madera</div><div class="font-bold text-lg tracking-tightish">Tratamiento en valla exterior</div></div></a>
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/p/AF1QipOr7Kw1Eh61NcA56w13rA4vFHTqyarp7PxHy5U=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Decorativo</div><div class="font-bold text-lg tracking-tightish">Salón comedor beige</div></div></a>
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/p/AF1QipNCsbZsGrAq0XkV0yU1omOcxPmqrwpGJy6Mk0s=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Suelos</div><div class="font-bold text-lg tracking-tightish">Hormigón impreso</div></div></a>
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/p/AF1QipN_48hlxcTP_E6UNfscqh8nm9YpYx67aO7ChzE=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Fachadas</div><div class="font-bold text-lg tracking-tightish">Diseño moderno con azul</div></div></a>
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/p/AF1QipO1GBxZXIfPCa_ROcLGVPJgrkUUrh9CJiUf0Vo=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Exterior</div><div class="font-bold text-lg tracking-tightish">Fachada naranja texturizada</div></div></a>
+          <a href="javascript:void(0)" class="proj aspect-square cursor-default"><img src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAGuCLcG1LJYqusN4aydnz7Q8QVuOU4gZnmMAR16Zx7DgsmCLI9LpuMS9XCDlHH7mihjg_xQ8WgIB-1RzWSDAp8UoClKeAWslzU_0DjorhRtim23Ck1kKR8ELv-0YsUdIOO4rvXr174vji8y=s1600" alt=""><div class="veil"></div>
+            <div class="label"><div class="text-xs uppercase tracking-[.22em] text-white/70">Detalles</div><div class="font-bold text-lg tracking-tightish">Barandilla escalera blanca</div></div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── TESTIMONIALS ───────── -->
+    <section id="testimonios" class="px-4 lg:px-8 py-16 lg:py-20">
+      <div class="mx-auto max-w-[1320px]">
+        <!-- Rounded container with the paint-roller image as BG (right-aligned, cover) -->
+        <div
+          class="relative rounded-[40px] lg:rounded-[56px] overflow-hidden py-20 lg:py-24 px-6 lg:px-14 bg-[#F4F4F5]"
+          style="background-image: url('assets/image/home/roll_img.png'); background-position: right center; background-repeat: no-repeat; background-size: cover;"
+        >
+          <!-- Soft white veil on the LEFT half so the testimonial card stays readable on top of the photo -->
+          <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/40 to-transparent pointer-events-none"></div>
+
+          <div class="relative z-10">
+            <div class="max-w-xl mb-12">
+              <span class="eyebrow">Testimonios</span>
+              <h2 class="display text-4xl lg:text-5xl mt-4">Proyectos recién terminados</h2>
+            </div>
+
+            <!-- Carousel: viewport + track of 3 slides -->
+            <div class="testi max-w-2xl" data-testi>
+              <div class="testi-viewport relative overflow-hidden rounded-[28px]">
+                <div class="testi-track flex transition-transform duration-[600ms] ease-[cubic-bezier(.2,.7,.2,1)]" data-testi-track>
+                  <article class="testi-slide w-full shrink-0 bg-white/95 backdrop-blur p-8 lg:p-10">
+                    <div class="flex gap-1">
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                    </div>
+                    <h3 class="mt-6 text-2xl lg:text-[26px] font-bold tracking-tightish leading-snug">
+                      El resultado ha superado ampliamente nuestras expectativas
+                    </h3>
+                    <p class="mt-4 text-ink/65 leading-relaxed text-[15px]">
+                      Excelente experiencia de principio a fin. Han asesorado y aportado un plus sobre lo acordado, demostrando un gran compromiso. Para nosotros, ya son la empresa de referencia.
+                    </p>
+                    <div class="mt-6 flex items-center gap-4">
+                      <div class="w-14 h-14 rounded-full bg-brand text-white grid place-items-center font-extrabold tracking-tightish">JL</div>
+                      <div>
+                        <div class="font-bold tracking-tightish">Jose Luis M</div>
+                        <div class="text-sm text-ink/55">Reseña verificada</div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="testi-slide w-full shrink-0 bg-white/95 backdrop-blur p-8 lg:p-10">
+                    <div class="flex gap-1">
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                    </div>
+                    <h3 class="mt-6 text-2xl lg:text-[26px] font-bold tracking-tightish leading-snug">
+                      Un equipo de profesionales de primera: serios y a buen precio.
+                    </h3>
+                    <p class="mt-4 text-ink/65 leading-relaxed text-[15px]">
+                      Carlos y su equipo han hecho una gran labor en el saneamiento y pintado de la escalera del edificio. Hacen difícil imaginar cómo estaba antes. Un servicio de 10.
+                    </p>
+                    <div class="mt-6 flex items-center gap-4">
+                      <div class="w-14 h-14 rounded-full bg-ink text-white grid place-items-center font-extrabold tracking-tightish">DP</div>
+                      <div>
+                        <div class="font-bold tracking-tightish">Daniel Perez</div>
+                        <div class="text-sm text-ink/55">Comunidad de vecinos</div>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="testi-slide w-full shrink-0 bg-white/95 backdrop-blur p-8 lg:p-10">
+                    <div class="flex gap-1">
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                      <img src="assets/image/svg/star.svg" class="w-5 h-5" alt=""/>
+                    </div>
+                    <h3 class="mt-6 text-2xl lg:text-[26px] font-bold tracking-tightish leading-snug">
+                      En menos de dos días ya estaba todo el piso pintado y limpio.
+                    </h3>
+                    <p class="mt-4 text-ink/65 leading-relaxed text-[15px]">
+                      TODO PERFECTO. Vinieron rápidamente para darme precio in situ. Paredes saneadas, bien pintadas, rápido y a buen precio. Los recomiendo, sin duda.
+                    </p>
+                    <div class="mt-6 flex items-center gap-4">
+                      <div class="w-14 h-14 rounded-full bg-yellow-400 text-ink grid place-items-center font-extrabold tracking-tightish">JA</div>
+                      <div>
+                        <div class="font-bold tracking-tightish">Jordi Avilés</div>
+                        <div class="text-sm text-ink/55">Reseña verificada</div>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div class="mt-7 flex items-center gap-2" data-testi-dots aria-hidden="true">
+                <span class="w-2 h-2 rounded-full bg-ink/80 transition-all"></span>
+                <span class="w-2 h-2 rounded-full bg-ink/20 transition-all"></span>
+                <span class="w-2 h-2 rounded-full bg-ink/20 transition-all"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────── MAKE AN APPOINTMENT ───────── -->
+    <section id="cita" class="py-24 lg:py-28 pb-44 lg:pb-56 relative z-10">
+      <!-- Floating brush + paint can (right edge, like original — fully inside the white section) -->
+      <img src="assets/image/home/itwork.png" alt="" aria-hidden="true"
+           class="brush-float pointer-events-none select-none absolute right-4 lg:right-10 bottom-4 w-[200px] lg:w-[240px] z-20 hidden md:block"/>
+
+      <div class="mx-auto max-w-[1320px] px-5 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-10 items-end relative">
+        <!-- Left: door + painter overlay -->
+        <div class="lg:col-span-6 relative flex items-end min-h-[560px] lg:min-h-[640px]">
+          <!-- Door image (background, rounded) -->
+          <div class="rounded-[40px] overflow-hidden bg-cream w-[58%] lg:w-[52%] aspect-[3/4.4] shrink-0">
+            <img src="assets/image/home/dream.jpg" alt="Puerta pintada" class="w-full h-full object-cover"/>
+          </div>
+          <!-- Painter image overlaps to the right, anchored to the bottom and oversized -->
+          <img src="assets/image/home/dream1.png" alt="Pintor profesional"
+               class="absolute right-0 lg:-right-4 bottom-0 w-[78%] lg:w-[82%] max-w-[600px] object-contain z-10 drop-shadow-[0_30px_40px_rgba(14,17,22,0.18)]"/>
+        </div>
+
+        <!-- Right: appointment form -->
+        <div class="lg:col-span-6 relative z-10">
+          <span class="eyebrow">Pide tu cita</span>
+          <h2 class="display text-4xl lg:text-5xl xl:text-[56px] mt-4">¿Necesitas ayuda con tu<br/>pintura ideal?</h2>
+          <p class="mt-5 text-ink/65 leading-[1.75] max-w-xl">
+            Cuéntanos tu proyecto y te llamamos en menos de 24 h con una propuesta cerrada. Sin
+            compromiso y con precio garantizado por escrito.
+          </p>
+
+          <form class="mt-9 grid sm:grid-cols-2 gap-x-5 gap-y-4" onsubmit="event.preventDefault(); alert('Solicitud enviada — te llamaremos en menos de 24 h.');">
+            <!-- Full name -->
+            <label class="relative block">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 grid place-items-center w-8 h-8 text-ink/40">
+                <img src="assets/image/svg/dream_img1.svg" class="w-5 h-5" alt=""/>
+              </span>
+              <input type="text" required placeholder="Nombre completo" class="w-full h-14 pl-14 pr-4 rounded-2xl bg-[#F4F4F5] border border-transparent text-[15px] placeholder:text-ink/50 focus:outline-none focus:border-brand focus:bg-white transition"/>
+            </label>
+            <!-- Phone -->
+            <label class="relative block">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 grid place-items-center w-8 h-8 text-ink/40">
+                <img src="assets/image/svg/dream_img2.svg" class="w-5 h-5" alt=""/>
+              </span>
+              <input type="tel" required placeholder="Teléfono" class="w-full h-14 pl-14 pr-4 rounded-2xl bg-[#F4F4F5] border border-transparent text-[15px] placeholder:text-ink/50 focus:outline-none focus:border-brand focus:bg-white transition"/>
+            </label>
+            <!-- Email -->
+            <label class="relative block">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 grid place-items-center w-8 h-8 text-ink/40">
+                <img src="assets/image/svg/dream_img3.svg" class="w-5 h-5" alt=""/>
+              </span>
+              <input type="email" required placeholder="Correo electrónico" class="w-full h-14 pl-14 pr-4 rounded-2xl bg-[#F4F4F5] border border-transparent text-[15px] placeholder:text-ink/50 focus:outline-none focus:border-brand focus:bg-white transition"/>
+            </label>
+            <!-- Service -->
+            <label class="relative block">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 grid place-items-center w-8 h-8 text-ink/40">
+                <img src="assets/image/svg/dream_img6.svg" class="w-5 h-5" alt=""/>
+              </span>
+              <select required class="appearance-none w-full h-14 pl-14 pr-10 rounded-2xl bg-[#F4F4F5] border border-transparent text-[15px] text-ink/80 focus:outline-none focus:border-brand focus:bg-white transition">
+                <option value="">Tipo de servicio</option>
+                <option>Pintura interior</option>
+                <option>Pintura exterior</option>
+                <option>Locales comerciales</option>
+                <option>Acabados decorativos</option>
+              </select>
+              <svg viewBox="0 0 24 24" class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-ink/40 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </label>
+            <!-- Date -->
+            <label class="relative block">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 grid place-items-center w-8 h-8 text-ink/40">
+                <img src="assets/image/svg/dream_img4.svg" class="w-5 h-5" alt=""/>
+              </span>
+              <input type="date" class="w-full h-14 pl-14 pr-4 rounded-2xl bg-[#F4F4F5] border border-transparent text-[15px] text-ink/80 placeholder:text-ink/50 focus:outline-none focus:border-brand focus:bg-white transition"/>
+            </label>
+            <!-- Postcode -->
+            <label class="relative block">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 grid place-items-center w-8 h-8 text-ink/40">
+                <img src="assets/image/svg/dream_img5.svg" class="w-5 h-5" alt=""/>
+              </span>
+              <input type="text" placeholder="Código postal" inputmode="numeric" pattern="[0-9]{5}" class="w-full h-14 pl-14 pr-4 rounded-2xl bg-[#F4F4F5] border border-transparent text-[15px] placeholder:text-ink/50 focus:outline-none focus:border-brand focus:bg-white transition"/>
+            </label>
+            <!-- Message -->
+            <label class="relative block sm:col-span-2">
+              <textarea rows="3" placeholder="Cuéntanos tu proyecto (opcional)" class="w-full p-4 rounded-2xl bg-[#F4F4F5] border border-transparent text-[15px] placeholder:text-ink/50 focus:outline-none focus:border-brand focus:bg-white transition resize-none"></textarea>
+            </label>
+
+            <div class="sm:col-span-2">
+              <button type="submit" class="btn btn-primary">
+                Pedir cita ahora
+                <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── HOW IT WORKS ───────── -->
+    <section class="py-24 bg-cream/60 relative overflow-hidden">
+      <div class="absolute right-0 bottom-0 opacity-30 pointer-events-none hidden lg:block">
+        <img src="assets/image/home/it_work.png" class="w-[420px]" alt=""/>
+      </div>
+      <div class="mx-auto max-w-[1320px] px-5 lg:px-8 relative">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2 class="display text-4xl lg:text-5xl mt-4">Disfruta de un acabado impecable en 3 pasos</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 lg:gap-10">
+          <div class="relative bg-white rounded-3xl p-8 shadow-card">
+            <div class="step-num">01</div>
+            <div class="absolute top-7 right-7 grid place-items-center w-16 h-16 rounded-2xl bg-brand/10">
+              <img src="assets/image/svg/itwork1.svg" class="w-9 h-9" alt=""/>
+            </div>
+            <h3 class="mt-5 text-xl font-bold tracking-tightish">Asesoría experta</h3>
+            <p class="mt-2 text-ink/60 leading-relaxed text-[15px]">
+              Vamos a tu casa o local, medimos y te asesoramos en color y producto sin compromiso.
+            </p>
+          </div>
+          <div class="relative bg-white rounded-3xl p-8 shadow-card md:translate-y-6">
+            <div class="step-num">02</div>
+            <div class="absolute top-7 right-7 grid place-items-center w-16 h-16 rounded-2xl bg-brand/10">
+              <img src="assets/image/svg/itwork3.svg" class="w-9 h-9" alt=""/>
+            </div>
+            <h3 class="mt-5 text-xl font-bold tracking-tightish">Presupuesto cerrado</h3>
+            <p class="mt-2 text-ink/60 leading-relaxed text-[15px]">
+              En 24 h tienes el documento firmado con precio, productos y plazos. Sin sorpresas.
+            </p>
+          </div>
+          <div class="relative bg-white rounded-3xl p-8 shadow-card">
+            <div class="step-num">03</div>
+            <div class="absolute top-7 right-7 grid place-items-center w-16 h-16 rounded-2xl bg-brand/10">
+              <img src="assets/image/svg/itwork4.svg" class="w-9 h-9" alt=""/>
+            </div>
+            <h3 class="mt-5 text-xl font-bold tracking-tightish">Puntualidad garantizada</h3>
+            <p class="mt-2 text-ink/60 leading-relaxed text-[15px]">
+              Cumplimos el calendario al día. Si nos retrasamos, te compensamos en el precio final.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── BLOG ───────── -->
+    <section id="blog" class="py-28 relative overflow-hidden">
+      <div class="absolute top-12 right-10 opacity-20 hidden lg:block">
+        <img src="assets/image/svg/news1.svg" class="w-24 h-24" alt=""/>
+      </div>
+      <div class="absolute bottom-12 left-10 opacity-20 hidden lg:block">
+        <img src="assets/image/svg/news2.svg" class="w-20 h-20" alt=""/>
+      </div>
+
+      <div class="mx-auto max-w-[1320px] px-5 lg:px-8 relative">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12">
+          <div>
+            <span class="eyebrow">Últimas noticias</span>
+            <h2 class="display text-4xl lg:text-5xl mt-4">Nuestros últimos posts</h2>
+          </div>
+          <a href="#" class="btn btn-ghost self-start lg:self-auto">
+            Ver todos los artículos
+            <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+          </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="group rounded-3xl overflow-hidden bg-white border border-black/[.05] hover:shadow-soft transition-all">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="assets/image/home/new1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="">
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-xs font-semibold tracking-wider uppercase text-brand">Interior</span>
+            </div>
+            <div class="p-6">
+              <div class="text-xs uppercase tracking-[.22em] text-ink/50 font-semibold">20 Feb 2025 · Consejos</div>
+              <h3 class="mt-3 text-xl font-bold tracking-tightish leading-snug group-hover:text-brand transition-colors">
+                Cómo elegir la pintura y el tono ideal para cada habitación
+              </h3>
+              <p class="mt-2 text-ink/60 text-[15px] leading-relaxed">
+                Una guía rápida para escoger acabado, luminosidad y paleta sin equivocarte.
+              </p>
+            </div>
+          </article>
+          <article class="group rounded-3xl overflow-hidden bg-white border border-black/[.05] hover:shadow-soft transition-all">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="assets/image/home/new2.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="">
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-xs font-semibold tracking-wider uppercase text-brand">Color</span>
+            </div>
+            <div class="p-6">
+              <div class="text-xs uppercase tracking-[.22em] text-ink/50 font-semibold">14 Feb 2025 · Inspiración</div>
+              <h3 class="mt-3 text-xl font-bold tracking-tightish leading-snug group-hover:text-brand transition-colors">
+                Trucos para escoger el color perfecto en interiores
+              </h3>
+              <p class="mt-2 text-ink/60 text-[15px] leading-relaxed">
+                Tonos cálidos, blancos rotos y trucos de pintor para que el espacio respire.
+              </p>
+            </div>
+          </article>
+          <article class="group rounded-3xl overflow-hidden bg-white border border-black/[.05] hover:shadow-soft transition-all">
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="assets/image/home/new3.jpg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="">
+              <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-xs font-semibold tracking-wider uppercase text-brand">Exterior</span>
+            </div>
+            <div class="p-6">
+              <div class="text-xs uppercase tracking-[.22em] text-ink/50 font-semibold">07 Feb 2025 · Exterior</div>
+              <h3 class="mt-3 text-xl font-bold tracking-tightish leading-snug group-hover:text-brand transition-colors">
+                Pintura exterior: ideas para renovar fachadas
+              </h3>
+              <p class="mt-2 text-ink/60 text-[15px] leading-relaxed">
+                Acabados resistentes a la intemperie con un look actual y duradero.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── FAQ ───────── -->
+    <section id="faqs" class="py-24 lg:py-28 bg-white">
+      <div class="mx-auto max-w-[1080px] px-5 lg:px-8">
+        <div class="text-center mb-12 lg:mb-16">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2 class="display text-4xl lg:text-5xl mt-4">Lo que más nos preguntan</h2>
+          <p class="mt-5 text-ink/65 leading-[1.7] max-w-xl mx-auto">
+            Las dudas habituales antes de contratar a un pintor. Si la tuya no está, pregúntanos por WhatsApp.
+          </p>
+        </div>
+        <div class="space-y-3">
+          <details class="group rounded-2xl bg-[#F4F4F5] border border-black/[.04] open:bg-white open:shadow-soft transition-colors">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer p-6 lg:p-7 list-none [&amp;::-webkit-details-marker]:hidden">
+              <h3 class="font-bold text-lg lg:text-xl tracking-tightish pr-4">¿Dais presupuesto sin compromiso?</h3>
+              <span class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-brand/10 text-brand group-open:bg-brand group-open:text-white transition-colors">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 lg:px-7 pb-6 lg:pb-7 -mt-1 text-ink/65 leading-relaxed text-[15px]">
+              Sí. Vamos a verte sin compromiso, medimos la obra y te pasamos un presupuesto cerrado por
+              escrito en 24-48 h. Sin sorpresas ni partidas ocultas.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl bg-[#F4F4F5] border border-black/[.04] open:bg-white open:shadow-soft transition-colors">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer p-6 lg:p-7 list-none [&amp;::-webkit-details-marker]:hidden">
+              <h3 class="font-bold text-lg lg:text-xl tracking-tightish pr-4">¿En cuánto tiempo terminan el trabajo?</h3>
+              <span class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-brand/10 text-brand group-open:bg-brand group-open:text-white transition-colors">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 lg:px-7 pb-6 lg:pb-7 -mt-1 text-ink/65 leading-relaxed text-[15px]">
+              Depende del tamaño y estado de la obra. Una habitación se puede terminar en 1-2 días, un
+              piso entero en 4-7 días y una fachada en 5-10. En el presupuesto te damos plazo firmado.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl bg-[#F4F4F5] border border-black/[.04] open:bg-white open:shadow-soft transition-colors">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer p-6 lg:p-7 list-none [&amp;::-webkit-details-marker]:hidden">
+              <h3 class="font-bold text-lg lg:text-xl tracking-tightish pr-4">¿Tengo que mover los muebles antes?</h3>
+              <span class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-brand/10 text-brand group-open:bg-brand group-open:text-white transition-colors">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 lg:px-7 pb-6 lg:pb-7 -mt-1 text-ink/65 leading-relaxed text-[15px]">
+              No es necesario. Nosotros movemos los muebles al centro, los protegemos con plásticos y
+              cubrimos suelos y enchufes. Al terminar dejamos todo donde estaba.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl bg-[#F4F4F5] border border-black/[.04] open:bg-white open:shadow-soft transition-colors">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer p-6 lg:p-7 list-none [&amp;::-webkit-details-marker]:hidden">
+              <h3 class="font-bold text-lg lg:text-xl tracking-tightish pr-4">¿Qué tipo de pintura usáis?</h3>
+              <span class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-brand/10 text-brand group-open:bg-brand group-open:text-white transition-colors">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 lg:px-7 pb-6 lg:pb-7 -mt-1 text-ink/65 leading-relaxed text-[15px]">
+              Trabajamos con marcas profesionales (plásticas al agua, esmaltes acrílicos, pinturas para
+              fachada con protección a la intemperie). Te aconsejamos el producto adecuado para cada
+              superficie y uso.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl bg-[#F4F4F5] border border-black/[.04] open:bg-white open:shadow-soft transition-colors">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer p-6 lg:p-7 list-none [&amp;::-webkit-details-marker]:hidden">
+              <h3 class="font-bold text-lg lg:text-xl tracking-tightish pr-4">¿Trabajáis en comunidades de vecinos?</h3>
+              <span class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-brand/10 text-brand group-open:bg-brand group-open:text-white transition-colors">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 lg:px-7 pb-6 lg:pb-7 -mt-1 text-ink/65 leading-relaxed text-[15px]">
+              Sí. Escaleras, garajes, fachadas y zonas comunes. Tratamos directamente con la
+              administración o el presidente, con plazos cerrados y mínimas molestias para los vecinos.
+            </div>
+          </details>
+
+          <details class="group rounded-2xl bg-[#F4F4F5] border border-black/[.04] open:bg-white open:shadow-soft transition-colors">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer p-6 lg:p-7 list-none [&amp;::-webkit-details-marker]:hidden">
+              <h3 class="font-bold text-lg lg:text-xl tracking-tightish pr-4">¿Cómo pido cita?</h3>
+              <span class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-brand/10 text-brand group-open:bg-brand group-open:text-white transition-colors">
+                <svg viewBox="0 0 24 24" class="w-4 h-4 transition-transform group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M12 5v14M5 12h14"/></svg>
+              </span>
+            </summary>
+            <div class="px-6 lg:px-7 pb-6 lg:pb-7 -mt-1 text-ink/65 leading-relaxed text-[15px]">
+              Llámanos al teléfono que aparece arriba o escríbenos por WhatsApp con el botón verde.
+              También puedes rellenar el formulario "¿Necesitas ayuda con tu pintura ideal?" y te
+              respondemos en menos de 24 h.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── MAP / FICHA GOOGLE BUSINESS ───────── -->
+    <!--
+      TEMPLATE: Reemplaza la `src` del <iframe> y el `href` del enlace "Abrir en Google Maps"
+      con la ficha del cliente. Forma rápida de obtener el src:
+        1. Abre el GBP en Google Maps
+        2. Compartir → Insertar un mapa → Copiar HTML
+        3. Pega solo el valor de `src=` aquí
+      Alternativa sin pasar por la UI: `https://www.google.com/maps?q=NOMBRE+NEGOCIO,CIUDAD&hl=es&z=14&output=embed`
+    -->
+    <section id="ubicacion" class="px-5 lg:px-8 pb-24">
+      <div class="mx-auto max-w-[1320px]">
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10 lg:mb-12">
+          <div>
+            <span class="eyebrow">Encuéntranos</span>
+            <h2 class="display text-4xl lg:text-5xl mt-4">Visítanos o llámanos</h2>
+            <p class="mt-4 text-ink/65 leading-[1.7] max-w-xl">
+              Ábrenos en Google Maps para ver reseñas, fotos y cómo llegar a nuestro taller.
+            </p>
+          </div>
+          <a href="https://maps.app.goo.gl/hVGXLg5dCXxHxenD8" target="_blank" rel="noopener noreferrer" class="btn btn-primary self-start lg:self-auto">
+            Abrir ficha en Google
+            <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
+          <div class="lg:col-span-7 relative rounded-[32px] overflow-hidden shadow-soft ring-1 ring-black/[.04]">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3002.113267472883!2d1.6480726999999997!3d41.197504099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3893f85fe168b%3A0x4622474f34707d05!2svilacolor%20pintores!5e0!3m2!1ses!2ses!4v1779146886409!5m2!1ses!2ses"
+            class="block w-full h-[420px] lg:h-[520px] border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación del negocio en Google Maps"></iframe>
+          </div>
+          <div class="lg:col-span-5 rounded-[32px] overflow-hidden shadow-soft roll-img">
+            <img src="assets/image/home/rollimage.jpg" alt="" class="w-full h-[420px] lg:h-[520px] object-cover"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────── FOOTER (clavado al original) ───────── -->
+    <footer id="contacto" class="bg-white text-ink pt-24 pb-10 relative">
+      <div class="mx-auto max-w-[1320px] px-5 lg:px-8">
+        <!-- TOP ROW: Working Hours | Services + Quick Links | Painters photo -->
+        <div class="flex flex-col lg:flex-row justify-between gap-10 lg:gap-8 items-start relative">
+          <!-- Working Hours -->
+          <div class="shrink-0">
+            <p class="text-[24px] leading-[36px] font-semibold text-black pb-[5px]">Horario</p>
+            <div class="mt-1 w-[300px] max-w-full">
+              <div class="flex justify-between py-[15px] text-[18px] leading-[24px] text-[#222]">
+                <span>Lunes a Viernes</span><span class="text-right">8:00 – 18:00</span>
+              </div>
+              <div class="flex justify-between py-[15px] text-[18px] leading-[24px] text-[#222]">
+                <span>Sábado y Domingo</span><span class="text-right">Cerrado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services + Quick Links -->
+          <div class="flex gap-[30px] shrink-0">
+            <ul class="pl-0 m-0 list-none">
+              <li class="text-[24px] leading-[36px] font-semibold text-black mb-5">Nuestros servicios</li>
+              <li><a href="#servicios" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Pintura interior</a></li>
+              <li><a href="#servicios" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Pintura exterior</a></li>
+              <li><a href="#servicios" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Locales comerciales</a></li>
+              <li><a href="#servicios" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Decorativos</a></li>
+            </ul>
+            <ul class="pl-0 m-0 list-none">
+              <li class="text-[24px] leading-[36px] font-semibold text-black mb-5">Enlaces rápidos</li>
+              <li><a href="#nosotros" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Sobre nosotros</a></li>
+              <li><a href="#nosotros" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Nuestro equipo</a></li>
+              <li><a href="#faqs" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">FAQs</a></li>
+              <li><a href="#proyectos" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Proyectos</a></li>
+              <li><a href="#ubicacion" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Ubicación</a></li>
+              <li><a href="#cita" class="text-[18px] leading-[40px] text-[#222] hover:text-brand transition-colors">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Painters photo -->
+          <div class="hidden lg:block shrink-0 self-end relative z-10 -mb-2">
+            <img src="assets/image/home/footerimg.png" alt="" class="w-[420px] xl:w-[460px] object-contain"/>
+          </div>
+          <div class="lg:hidden w-full flex justify-center">
+            <img src="assets/image/home/footerimg.png" alt="" class="w-[280px] object-contain"/>
+          </div>
+        </div>
+
+        <!-- MIDDLE ROW: Black rounded bar with logo | red phone pill | socials -->
+        <div class="mt-10 lg:mt-12 rounded-[30px] bg-black px-[30px] py-[20px] flex flex-col lg:flex-row items-center gap-5 lg:gap-5 justify-between relative">
+          <!-- Logo (keep native colors: red diamond + white) -->
+          <a href="#" class="shrink-0">
+            <img src="assets/image/svg/footerlogo.svg" alt="Pintores" class="h-[60px] w-auto"/>
+          </a>
+
+          <!-- Red phone pill -->
+          <div class="flex items-center gap-5 bg-brand rounded-full p-[10px] lg:max-w-[410px] w-full">
+            <span class="grid place-items-center w-[80px] h-[80px] rounded-full bg-black shrink-0">
+              <img src="assets/image/svg/footericon.svg" class="w-[25px] h-[25px]" alt=""/>
+            </span>
+            <div class="flex flex-col leading-tight">
+              <span class="text-white text-[20px] leading-[30px] font-medium">¡LLÁMANOS YA!</span>
+              <a href="tel:+34688469104" class="text-white text-[26px] lg:text-[30px] leading-[30px] font-semibold mt-[10px] hover:text-white">
+                688 46 91 04
+              </a>
+            </div>
+          </div>
+
+          <!-- Socials -->
+          <div class="flex items-center gap-5 shrink-0">
+            <a href="#" aria-label="Facebook" class="social-icon">
+              <img src="assets/image/svg/footer1.svg" class="w-[25px] h-[25px] relative z-[2]" alt=""/>
+            </a>
+            <a href="#" aria-label="X" class="social-icon">
+              <img src="assets/image/svg/footer2.svg" class="w-[25px] h-[25px] relative z-[2]" alt=""/>
+            </a>
+            <a href="#" aria-label="Instagram" class="social-icon">
+              <img src="assets/image/svg/footer3.svg" class="w-[25px] h-[25px] relative z-[2]" alt=""/>
+            </a>
+            <a href="https://wa.me/34688469104" aria-label="WhatsApp" class="social-icon">
+              <img src="assets/image/svg/footer4.svg" class="w-[25px] h-[25px] relative z-[2]" alt=""/>
+            </a>
+          </div>
+        </div>
+
+        <!-- BOTTOM ROW: copyright | privacy / terms -->
+        <div class="mt-10 flex flex-col lg:flex-row gap-3 lg:items-center lg:justify-between text-[18px] leading-[24px] text-[#222]">
+          <p>Copyright © 2025 Todos los derechos reservados por <span class="hover:text-brand cursor-pointer">Pintores Profesionales</span></p>
+          <div class="flex items-center gap-0">
+            <a href="#" class="px-[10px] hover:text-brand transition-colors">Política de privacidad</a>
+            <span class="block h-5 border-l-2 border-[#222]"></span>
+            <a href="#" class="px-[10px] hover:text-brand transition-colors">Términos y condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ───────── FLOATING WHATSAPP CTA ───────── -->
+    <a href="https://wa.me/34688469104?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20un%20presupuesto."
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-5 right-5 lg:bottom-7 lg:right-7 z-50 grid place-items-center w-14 h-14 lg:w-16 lg:h-16 rounded-full bg-[#25D366] text-white shadow-[0_14px_36px_-8px_rgba(37,211,102,.55)] hover:bg-[#1da851] hover:scale-105 active:scale-95 transition-transform">
+      <span class="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping pointer-events-none"></span>
+      <svg viewBox="0 0 24 24" class="relative w-7 h-7 lg:w-8 lg:h-8" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+      </svg>
+    </a>
+
+    <script>
+      const counters = document.querySelectorAll('[data-counter]');
+      const animateCounter = (el) => {
+        const target = +el.dataset.counter;
+        const start = performance.now();
+        const dur = 1800;
+        const step = (t) => {
+          const p = Math.min(1, (t - start) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(eased * target).toLocaleString('es-ES');
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            if (e.target.dataset.counter) animateCounter(e.target);
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.25 });
+      counters.forEach((c) => io.observe(c));
+      document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+      // Testimonials carousel — autoplay + prev/next + dots
+      document.querySelectorAll('[data-testi]').forEach((root) => {
+        const track = root.querySelector('[data-testi-track]');
+        const slides = Array.from(track.children);
+        const dots = Array.from(root.querySelectorAll('[data-testi-dots] span'));
+        const prev = root.querySelector('[data-testi-prev]');
+        const next = root.querySelector('[data-testi-next]');
+        let idx = 0;
+        let timer;
+        const render = () => {
+          track.style.transform = `translateX(-${idx * 100}%)`;
+          dots.forEach((d, i) => {
+            d.classList.toggle('bg-ink/80', i === idx);
+            d.classList.toggle('bg-ink/20', i !== idx);
+            d.classList.toggle('w-6', i === idx);
+            d.classList.toggle('w-2', i !== idx);
+          });
+        };
+        const go = (n) => { idx = (n + slides.length) % slides.length; render(); restart(); };
+        const advance = () => go(idx + 1);
+        const restart = () => { clearInterval(timer); timer = setInterval(advance, 6000); };
+        prev?.addEventListener('click', () => go(idx - 1));
+        next?.addEventListener('click', () => go(idx + 1));
+        root.addEventListener('mouseenter', () => clearInterval(timer));
+        root.addEventListener('mouseleave', restart);
+        render();
+        restart();
+      });
+    </script>
+  </body>
+</html>

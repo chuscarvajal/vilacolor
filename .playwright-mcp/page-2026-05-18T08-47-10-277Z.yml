@@ -1,0 +1,57 @@
+- main [ref=e5]:
+  - generic [ref=e6]:
+    - 'button "Idioma: Español" [ref=e11] [cursor=pointer]':
+      - img [ref=e15]
+      - generic [ref=e17]: ES
+    - generic [ref=e19] [cursor=pointer]:
+      - generic [ref=e20]: Iniciar sesión
+      - link "Iniciar sesión" [ref=e21]:
+        - /url: https://accounts.google.com/ServiceLogin?hl=es&continue=https://www.google.com/maps/place/Pintor%2BRomero/@39.4256506,-0.4148786,17z/data%3D!3m1!4b1!4m6!3m5!1s0xd604f53655f9113:0x2385e42aaaba0845!8m2!3d39.4256506!4d-0.4148786!16s%252Fg%252F11v13fm8k5?authuser%3D0%26entry%3Dtts%26g_ep%3DEgoyMDI2MDUxMy4wIPu8ASoASAFQAw%253D%253D%26skid%3De87265f6-a1f7-4ab8-8d6d-e0c62f263220&gae=cb-eomtm
+  - generic [ref=e22]:
+    - generic [ref=e23]:
+      - img "Google" [ref=e26]
+      - generic [ref=e27]:
+        - heading "Antes de ir a Google" [level=1] [ref=e28]
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - paragraph [ref=e31]:
+              - text: Usamos
+              - link "cookies (Se abre en una nueva pestaña)" [ref=e32] [cursor=pointer]:
+                - /url: https://policies.google.com/technologies/cookies?hl=es&utm_source=ucb
+                - text: cookies
+                - generic "(Se abre en una nueva pestaña)" [ref=e33]:
+                  - img [ref=e34]
+              - text: "y datos para:"
+            - list [ref=e36]:
+              - listitem [ref=e37]: Proporcionar y mantener nuestros servicios
+              - listitem [ref=e38]: Hacer un seguimiento de las interrupciones y prevenir el spam, el fraude y los abusos
+              - listitem [ref=e39]: Medir la interacción de la audiencia y estadísticas de los sitios para entender cómo se utilizan nuestros servicios y mejorar su calidad
+          - generic [ref=e40]:
+            - paragraph [ref=e41]: "Si eliges Aceptar todo, también usaremos cookies y datos para:"
+            - list [ref=e42]:
+              - listitem [ref=e43]: Desarrollar y mejorar nuevos servicios
+              - listitem [ref=e44]: Proporcionar anuncios y medir su eficacia
+              - listitem [ref=e45]: Mostrar contenido personalizado en función de tus ajustes
+              - listitem [ref=e46]: Mostrar anuncios personalizados en función de tus ajustes
+          - paragraph [ref=e48]: Si eliges Rechazar todo, no usaremos cookies para estos fines adicionales.
+          - paragraph [ref=e50]: El contenido no personalizado está influido por factores como lo que estés viendo en ese momento, la actividad de tu sesión de búsqueda activa y tu ubicación. Los anuncios no personalizados están influidos por lo que estés viendo en ese momento y tu ubicación general. El contenido y los anuncios personalizados también pueden incluir resultados y recomendaciones más relevantes, así como anuncios basados en la actividad que se haya realizado previamente con este navegador, como búsquedas en Google anteriores. En caso necesario, también usamos cookies y datos para adaptar la experiencia de modo que sea apropiada para determinada edad.
+          - paragraph [ref=e52]: Selecciona Más opciones para ver información adicional, como detalles sobre la gestión de la configuración de privacidad. También puedes visitar g.co/privacytools en cualquier momento.
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - button "Rechazar todo" [ref=e59] [cursor=pointer]:
+            - generic [ref=e61]: Rechazar todo
+          - button "Aceptar todo" [ref=e65] [cursor=pointer]:
+            - generic [ref=e67]: Aceptar todo
+        - generic [ref=e69] [cursor=pointer]:
+          - generic [ref=e70]: Más opciones
+          - link "Más opciones de ajustes de personalización y cookies" [ref=e71]:
+            - /url: https://consent.google.com/d?continue=https://www.google.com/maps/place/Pintor%2BRomero/@39.4256506,-0.4148786,17z/data%3D!3m1!4b1!4m6!3m5!1s0xd604f53655f9113:0x2385e42aaaba0845!8m2!3d39.4256506!4d-0.4148786!16s%252Fg%252F11v13fm8k5?authuser%3D0%26entry%3Dtts%26g_ep%3DEgoyMDI2MDUxMy4wIPu8ASoASAFQAw%253D%253D%26skid%3De87265f6-a1f7-4ab8-8d6d-e0c62f263220&gl=ES&hl=es&cm=2&pc=m&uxe=eomtm&src=1&escs=AZ8E49AQxsSgw041060q787Rswdzfh8Vg6cBqsuhYlSVLXrZVMUwnMzG_P8xmMEAbbB1KvAArxI6oJimzyhptNYzZCs1ejDNDati
+    - generic [ref=e74]:
+      - generic [ref=e76] [cursor=pointer]:
+        - generic [ref=e77]: Política de Privacidad
+        - link "Política de Privacidad" [ref=e78]:
+          - /url: https://policies.google.com/privacy?hl=es&utm_source=ucb
+      - generic [ref=e80] [cursor=pointer]:
+        - generic [ref=e81]: Términos del Servicio
+        - link "Términos del Servicio" [ref=e82]:
+          - /url: https://policies.google.com/terms?hl=es&utm_source=ucb

@@ -1,0 +1,5 @@
+node_modules/
+.scrape/
+temporary screenshots/
+.tmp/
+.DS_Store
