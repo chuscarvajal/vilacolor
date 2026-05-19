@@ -162,6 +162,79 @@
       </div>
     </header>
 
+  <!-- ───────── MOBILE MENU ───────── -->
+  <div id="mobileNav" class="fixed inset-0 z-[9999] pointer-events-none">
+    <!-- Backdrop -->
+    <div id="mobileNavBg" class="absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+    <!-- Drawer -->
+    <div id="mobileNavDrawer" class="absolute top-0 right-0 h-full w-[280px] bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+      <!-- Header row -->
+      <div class="flex items-center justify-between px-6 py-5 border-b border-black/10">
+        <span id="mobileNavTitle" class="text-[17px] font-bold text-ink"></span>
+        <button id="mobileNavClose" aria-label="Cerrar menú" class="grid place-items-center w-9 h-9 rounded-lg border border-black/10 hover:bg-black/5">
+          <svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <!-- Nav links injected by JS -->
+      <nav id="mobileNavLinks" class="flex flex-col px-4 py-4 gap-1 flex-1 overflow-y-auto"></nav>
+      <!-- CTA -->
+      <div class="px-4 pb-6">
+        <a href="#contacto" id="mobileNavCta" class="btn btn-primary w-full justify-center text-[15px]">
+          Pedir cita
+          <span class="arrow"><img src="assets/image/svg/buttonarrow.svg" class="w-3.5 h-3.5" alt=""/></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const btn    = document.querySelector('button[aria-label="Menú"]');
+    const nav    = document.getElementById('mobileNav');
+    const bg     = document.getElementById('mobileNavBg');
+    const drawer = document.getElementById('mobileNavDrawer');
+    const close  = document.getElementById('mobileNavClose');
+    const links  = document.getElementById('mobileNavLinks');
+    const title  = document.getElementById('mobileNavTitle');
+
+    // Copy wordmark to mobile header
+    const wm = document.querySelector('header a span');
+    if(wm && title) title.textContent = wm.textContent;
+
+    // Copy desktop nav links
+    const desktopLinks = document.querySelectorAll('header nav a');
+    desktopLinks.forEach(a => {
+      const el = document.createElement('a');
+      el.href = a.href;
+      el.textContent = a.textContent;
+      el.className = 'px-4 py-3 rounded-xl text-[16px] font-medium text-ink hover:bg-brand/10 hover:text-brand transition-colors';
+      links.appendChild(el);
+    });
+
+    function openMenu(){
+      nav.classList.remove('pointer-events-none');
+      bg.classList.remove('opacity-0','pointer-events-none');
+      bg.classList.add('opacity-100','pointer-events-auto');
+      drawer.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu(){
+      bg.classList.remove('opacity-100','pointer-events-auto');
+      bg.classList.add('opacity-0','pointer-events-none');
+      drawer.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+      setTimeout(()=> nav.classList.add('pointer-events-none'), 300);
+    }
+
+    btn?.addEventListener('click', openMenu);
+    close?.addEventListener('click', closeMenu);
+    bg?.addEventListener('click', closeMenu);
+    links?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.getElementById('mobileNavCta')?.addEventListener('click', closeMenu);
+  })();
+  </script>
+
+
     <!-- ───────── HERO ───────── -->
     <section id="inicio" class="relative overflow-hidden isolate bg-black">
       <!-- Full-bleed hero photo (paint brush + paint cans) -->
@@ -1017,9 +1090,6 @@
         <!-- MIDDLE ROW: Black rounded bar with logo | red phone pill | socials -->
         <div class="mt-10 lg:mt-12 rounded-[30px] bg-black px-[30px] py-[20px] flex flex-col lg:flex-row items-center gap-5 lg:gap-5 justify-between relative">
           <!-- Logo (keep native colors: red diamond + white) -->
-          <a href="#" class="shrink-0">
-            <img src="assets/image/svg/footerlogo.svg" alt="Pintores" class="h-[60px] w-auto"/>
-          </a>
 
           <!-- Red phone pill -->
           <div class="flex items-center gap-5 bg-brand rounded-full p-[10px] lg:max-w-[410px] w-full">
