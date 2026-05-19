@@ -134,15 +134,12 @@
       .social-icon:hover::before { width: 120%; height: 120%; }
       .social-icon img { position: relative; z-index: 2; }
 
-      /* Mobile: center service cards */
+            /* Mobile: center service cards */
       @media (max-width: 639px) {
-        #servicios .grid > a {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-        #servicios .grid > a p { max-width: 260px; }
+        #servicios .grid > a { text-align: center !important; }
+        #servicios .grid > a > img { display: block !important; margin-left: auto !important; margin-right: auto !important; }
+        #servicios .grid > a h3 { text-align: center !important; }
+        #servicios .grid > a p { text-align: center !important; margin-left: auto !important; margin-right: auto !important; }
       }    </style>
   </head>
 
